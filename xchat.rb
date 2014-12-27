@@ -4,6 +4,13 @@ class Xchat < Formula
   sha1 "a4ac161e4e40f4bbabc492675a1ff4380dba8d68"
   revision 1
 
+  bottle do
+    root_url "https://downloads.sf.net/project/machomebrew/Bottles/x11"
+    sha1 "e4b1483559996dddbc440044c7b5656ee827718f" => :yosemite
+    sha1 "fcbd34a03dbb1a3c348744ab6ff50df56a5e24d9" => :mavericks
+    sha1 "d9631c5b4680a3e8dda49d2a3c1291ea316dd15a" => :mountain_lion
+  end
+
   depends_on "pkg-config" => :build
   depends_on "openssl"
   depends_on "gettext"
