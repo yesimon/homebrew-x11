@@ -1,13 +1,13 @@
-require 'formula'
-
 class Xchat < Formula
-  homepage 'http://xchat.org'
-  url 'http://xchat.org/files/source/2.8/xchat-2.8.8.tar.bz2'
-  sha1 'a4ac161e4e40f4bbabc492675a1ff4380dba8d68'
+  homepage "http://xchat.org"
+  url "http://xchat.org/files/source/2.8/xchat-2.8.8.tar.bz2"
+  sha1 "a4ac161e4e40f4bbabc492675a1ff4380dba8d68"
+  revision 1
 
-  depends_on 'pkg-config' => :build
-  depends_on 'gettext'
-  depends_on 'gtk+'
+  depends_on "pkg-config" => :build
+  depends_on "openssl"
+  depends_on "gettext"
+  depends_on "gtk+"
   depends_on :x11
 
   # Adjust to newer glib include conventions
@@ -15,23 +15,27 @@ class Xchat < Formula
   patch :DATA
 
   def install
-    ENV.append 'LDFLAGS', '-lgmodule-2.0'
+    ENV.append "LDFLAGS", "-lgmodule-2.0"
 
-    args = %W[--prefix=#{prefix}
-              --disable-dependency-tracking
-              --enable-openssl
-              --disable-python
-              --disable-xlib
-              --disable-perl
-              --disable-plugin]
+    args = %W[
+      --prefix=#{prefix}
+      --disable-dependency-tracking
+      --enable-openssl
+      --disable-python
+      --disable-xlib
+      --disable-perl
+      --disable-plugin
+    ]
 
     # Fails on 32-bit core solo without this
     args << "--disable-mmx" unless MacOS.prefer_64_bit?
 
     system "./configure", *args
-    system "make install"
-    rm_rf share+"applications"
-    rm_rf share+"pixmaps"
+    system "make", "install"
+  end
+
+  test do
+    system "#{bin}/xchat", "-v"
   end
 end
 
