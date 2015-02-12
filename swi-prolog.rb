@@ -7,9 +7,11 @@ class SwiProlog < Formula
   revision 1
 
   bottle do
-    sha1 "639b6093ff09bb6b066ff86705de2ddc78c37213" => :yosemite
-    sha1 "76f0f355cc1e16442ed3f474654924890da457dd" => :mavericks
-    sha1 "6917eab60b4e607311f0ee777dd70e31e624e7c1" => :mountain_lion
+    root_url "https://downloads.sf.net/project/machomebrew/Bottles/x11"
+    revision 1
+    sha1 "77484655836158b8a98d0c643ca016c9d5a32f33" => :yosemite
+    sha1 "ac3ff712449af7fbe1a391d801caa71d0849ccc3" => :mavericks
+    sha1 "18e03b72f6d4ac40a4820ea69c102c03d8c3cdbc" => :mountain_lion
   end
 
   devel do
