@@ -41,19 +41,7 @@ class Freerdp < Formula
 
   def install
     cmake_args = std_cmake_args
-
-    if build.head? then
-      # workaround for out-of-git clone tree build
-      inreplace 'cmake/GetGitRevisionDescription.cmake',
-        'set(GIT_PARENT_DIR "${CMAKE_SOURCE_DIR}")',
-        "set(GIT_PARENT_DIR \"#{cached_download}\")"
-
-      inreplace 'cmake/GetGitRevisionDescription.cmake',
-        'WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"',
-        "WORKING_DIRECTORY \"#{cached_download}\""
-      cmake_args << "-DWITH_X11=ON"
-    end
-
+    cmake_args << "-DWITH_X11=ON" if build.head?
     system "cmake", ".", *cmake_args
     system "make install"
   end
