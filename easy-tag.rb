@@ -1,9 +1,9 @@
 require "formula"
 
 class EasyTag < Formula
-  homepage "http://projects.gnome.org/easytag"
-  url "http://ftp.gnome.org/pub/GNOME/sources/easytag/2.2/easytag-2.2.5.tar.xz"
-  sha256 "a6da3a094997fa225d1c01211b282f2d3c2dfd93a74f3bec24017bd5a13f3855"
+  homepage "https://projects.gnome.org/easytag"
+  url "http://ftp.gnome.org/pub/GNOME/sources/easytag/2.2/easytag-2.2.6.tar.xz"
+  sha256 "26437f0d698c3b16794336c335b40f53fa26aefeb77322e45e4e2501c4cff14a"
 
   bottle do
     sha1 "a7f3903c91ea6e7884a238f5a93cc46dd9da6fcd" => :yosemite
