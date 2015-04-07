@@ -6,9 +6,10 @@ class EasyTag < Formula
   sha256 "26437f0d698c3b16794336c335b40f53fa26aefeb77322e45e4e2501c4cff14a"
 
   bottle do
-    sha1 "a7f3903c91ea6e7884a238f5a93cc46dd9da6fcd" => :yosemite
-    sha1 "284cd60570c14b70dce6c670ba4d496399dc1c41" => :mavericks
-    sha1 "efb11e24318b92bd002b21ef78c62f796c0dbeba" => :mountain_lion
+    root_url "https://homebrew.bintray.com/bottles-x11"
+    sha256 "88a3c59ab8c4535c5b4e4ff1ac78e994106e6ec0247de6e727cba89f17db8b7e" => :yosemite
+    sha256 "ffc3a8efa986fbcd9ca6bb7d728a00c58bbe8feb7407ff847625054199d078e9" => :mavericks
+    sha256 "e148032bdd5eaf577328da670966c95f60ef42517f1ee6f00316526d3b27ed89" => :mountain_lion
   end
 
   depends_on :x11
