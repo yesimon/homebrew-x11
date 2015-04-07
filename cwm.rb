@@ -4,10 +4,11 @@ class Cwm < Formula
   sha1 "637f615a2a5944070cfe2a5fd0125daa461967b5"
 
   bottle do
+    root_url "https://homebrew.bintray.com/bottles-x11"
     cellar :any
-    sha1 "4794ec9443e9ff59c3af6f85ba0bbac08fad496e" => :mavericks
-    sha1 "2750622d8304cc2a008586e4b7b3cc6bfa82b3e2" => :mountain_lion
-    sha1 "28a681a7185ab875e77eb664679c21751e871855" => :lion
+    sha256 "66505c17dbe6aabfc53d2cfd0d9b09f77ca384637ffcf99a209e0c87f6b37a85" => :yosemite
+    sha256 "9665155b0132c3fd248bb81d44204b90e8b352fb82054b238b98d7223a92abdd" => :mavericks
+    sha256 "895d906f52d9eca0a83a290bcb1499343ecf91b22cbee77f0494a39239fa7859" => :mountain_lion
   end
 
   depends_on :x11
